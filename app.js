@@ -39,16 +39,20 @@ ScrollReveal().reveal('.right', { origin: 'right' })
 ScrollReveal().reveal('.top', { origin: 'top' })
 ScrollReveal().reveal('.bottom', { origin: 'bottom' })
 
-
+/* ===== TYPED TEXT (UPDATED FOR YOU) ===== */
 const typed = new Typed('.multiple-text', {
-    strings: ['Data Scientist & Data Analyst', 'AI Solutions Enthusiast', 'ML & AI Researcher'],
+    strings: [
+        'Data Analyst',
+        'Business Analyst',
+        'Product Analyst'
+    ],
     typeSpeed: 160,
     backSpeed: 160,
     backDelay: 1200,
     loop: true
 });
 
-/* ---- NEW: Add this code below to initialize particles.js ---- */
+/* ---- PARTICLES ---- */
 particlesJS.load('particles-js', 'particles.json', function () {
     console.log('callback - particles.js config loaded');
 });

@@ -1,84 +1,73 @@
-/* ===== EDUCATION SECTION ===== */
-
 .education-section{
-  padding: 100px 10%;
-  position: relative;
+  padding:100px 10%;
+  background:#061425;
+  color:#fff;
 }
 
 .section-title{
   text-align:center;
   font-size:48px;
-  color:#fff;
   margin-bottom:60px;
+  color:#fff;
 }
 
 .edu-timeline{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+  position:relative;
 }
 
-/* Pink vertical line */
-.edu-timeline::before{
-  content:"";
-  position:absolute;
-  left: 20px;
-  top: 0;
-  height: 100%;
-  width: 2px;
-  background: #ff2bdc;
-}
-
-/* Box */
 .edu-box{
-  position: relative;
-  margin-left: 60px;
-  border: 2px solid #ff2bdc;
-  border-radius: 12px;
-  padding: 25px 30px;
-  background: rgba(10, 25, 47, 0.6);
-  box-shadow: 0 0 15px rgba(255, 43, 220, 0.15);
+  position:relative;
+  border:2px solid #ff00ff;
+  border-radius:12px;
+  padding:30px 30px 30px 60px;
+  background:rgba(255,255,255,0.03);
+  box-shadow:0 0 20px rgba(255,0,255,0.15);
 }
 
-/* Dot */
 .edu-dot{
   position:absolute;
-  left: -52px;
-  top: 25px;
-  width: 14px;
-  height: 14px;
-  background:#ff2bdc;
+  left:-10px;
+  top:40px;
+  width:18px;
+  height:18px;
+  background:#ff00ff;
   border-radius:50%;
-  box-shadow: 0 0 10px #ff2bdc;
+  box-shadow:0 0 15px #ff00ff;
 }
 
-/* Content */
 .edu-year{
-  color:#ff2bdc;
+  color:#ff00ff;
   font-weight:600;
   font-size:14px;
 }
 
 .edu-content h3{
-  color:#fff;
-  margin:8px 0 4px;
+  font-size:22px;
+  margin:10px 0 5px;
 }
 
 .edu-content h4{
-  color:#00f5ff;
-  margin-bottom:6px;
-  font-weight:500;
+  font-size:18px;
+  color:#00eaff;
+  margin-bottom:5px;
 }
 
-.edu-content p{
-  color:#cfd8e3;
-  margin:4px 0;
+.edu-college{
+  font-size:16px;
+  opacity:0.9;
+}
+
+.edu-cgpa{
+  margin-top:5px;
   font-size:15px;
 }
 
 .edu-desc{
-  margin-top:8px;
+  margin-top:10px;
+  font-size:15px;
   line-height:1.6;
-  color:#b8c7d9;
+  opacity:0.85;
 }

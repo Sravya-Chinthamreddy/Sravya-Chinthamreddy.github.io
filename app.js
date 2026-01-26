@@ -1,129 +1,73 @@
-/* ================================
-   Portfolio Script - Sravya
-   Role: Data Analyst | Product Analyst
-================================ */
-
-/* ===== DOM ELEMENTS ===== */
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+// ================= NAVBAR TOGGLE =================
 let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+let navLinks = document.querySelector('.nav-links');
 
-/* ================================
-   MOBILE MENU TOGGLE
-================================ */
 menuIcon.onclick = () => {
+    navLinks.classList.toggle('active');
     menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
 };
 
-/* ================================
-   SCROLL ACTIVE NAV LINK
-================================ */
-window.onscroll = () => {
-    let top = window.scrollY;
+// ================= ACTIVE LINK ON SCROLL =================
+let sections = document.querySelectorAll('section');
+let navItems = document.querySelectorAll('header nav a');
 
+window.onscroll = () => {
     sections.forEach(sec => {
+        let top = window.scrollY;
         let offset = sec.offsetTop - 120;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach(link => {
+        if(top >= offset && top < offset + height){
+            navItems.forEach(link => {
                 link.classList.remove('active');
-                document
-                  .querySelector('header nav a[href*=' + id + ']')
-                  .classList.add('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
             });
         }
     });
 
-    /* close menu on scroll */
+    // close mobile nav on scroll
+    navLinks.classList.remove('active');
     menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
 };
 
-/* ================================
-   SMOOTH SCROLL
-================================ */
-document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-/* ================================
-   TYPED TEXT ANIMATION
-================================ */
+// ================= TYPED TEXT =================
 const typed = new Typed('.multiple-text', {
-    strings: [
-        'Data Analyst',
-        'Product Analyst',
-        'SQL Specialist',
-        'Power BI Developer',
-        'Business Intelligence Analyst'
-    ],
+    strings: ['Data Analyst', 'Product Analyst', 'SQL Specialist', 'Power BI Analyst'],
     typeSpeed: 90,
     backSpeed: 60,
     backDelay: 1200,
     loop: true
 });
 
-/* ================================
-   PARTICLES BACKGROUND
-================================ */
-particlesJS.load('particles-js', 'particles.json', function () {
-    console.log('Particles.js loaded');
+// ================= PARTICLES =================
+particlesJS('particles-js', {
+  "particles": {
+    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": "#00e5ff" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.5 },
+    "size": { "value": 3, "random": true },
+    "line_linked": { "enable": true, "distance": 150, "color": "#00e5ff", "opacity": 0.4, "width": 1 },
+    "move": { "enable": true, "speed": 2 }
+  },
+  "interactivity": {
+    "events": {
+      "onhover": { "enable": true, "mode": "repulse" },
+      "onclick": { "enable": true, "mode": "push" }
+    }
+  },
+  "retina_detect": true
 });
 
-/* ================================
-   SCROLL REVEAL ANIMATIONS
-================================ */
-ScrollReveal({
-    reset: false,
-    distance: '60px',
-    duration: 1200,
-    delay: 100
-});
-
-ScrollReveal().reveal('.hero-text, .section-title', { origin: 'top' });
-ScrollReveal().reveal('.hero-img, .skills-grid, .projects-grid', { origin: 'bottom' });
-ScrollReveal().reveal('.about, .experience-card, .contact', { origin: 'left' });
-
-/* ================================
-   NAVBAR SHADOW ON SCROLL
-================================ */
-window.addEventListener('scroll', () => {
-    let header = document.querySelector('header');
-    header.classList.toggle('shadow', window.scrollY > 100);
-});
-
-/* ================================
-   PROJECT CARD HOVER EFFECT
-================================ */
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-12px) scale(1.01)';
-    });
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0) scale(1)';
+// ================= SCROLL ANIMATIONS =================
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
     });
 });
 
-/* ================================
-   LOADING ANIMATION
-================================ */
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
-
-/* ================================
-   FOOTER YEAR AUTO UPDATE
-================================ */
-const year = document.getElementById('year');
-if(year){
-    year.textContent = new Date().getFullYear();
-}
+const hiddenElements = document.querySelectorAll('.section, .project-card, .skill');
+hiddenElements.forEach(el => observer.observe(el));

@@ -71,3 +71,8 @@ const observer = new IntersectionObserver(entries => {
 
 const hiddenElements = document.querySelectorAll('.section, .project-card, .skill');
 hiddenElements.forEach(el => observer.observe(el));
+/* ===== PARTICLES LOAD ===== */
+particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('particles loaded');
+});
+

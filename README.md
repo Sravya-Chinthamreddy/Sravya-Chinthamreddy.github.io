@@ -10,6 +10,17 @@ This portfolio showcases my skills, projects, and experience in:
 - Business Intelligence
 - Exploratory Data Analysis (EDA)
 
+## Experience
+
+### Business Analyst Trainee — YOCOYA Technologies
+**Feb 2025 – Sep 2025**
+
+Gained 7 months of real-world, hands-on experience working directly with client data:
+- Cleaned and validated real client data using SQL and Excel — checking for duplicates and incorrect entries before uploading into the CRM.
+- Prepared Monthly Business Reviews (MBRs) in Power BI for every client, working with real datasets to surface key metrics and trends.
+- Developed Python scripts to automate daily reporting emails, applying Python to real, recurring data workflows.
+- Collaborated with the technical team to gather requirements, resolve data discrepancies, and maintain accurate CRM data pipelines.
+
 ## Skills
 - SQL, Python, Excel
 - Power BI, Tableau
@@ -20,7 +31,7 @@ This portfolio showcases my skills, projects, and experience in:
 
 ## Projects
 ### Worldwide Energy Consumption
-Data analytics project using Python and Pandas to analyze global energy consumption patterns and trends.
+Data analysis project using Python and Pandas to clean, explore, and analyze global energy consumption patterns and trends across 200+ countries.
 
 ### Bangalore Ola Rides Analytics
 SQL + Power BI project analyzing ride-hailing data for demand forecasting, customer behavior, and operational optimization.

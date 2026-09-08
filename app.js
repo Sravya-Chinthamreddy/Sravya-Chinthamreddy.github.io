@@ -43,8 +43,7 @@ ScrollReveal().reveal('.bottom', { origin: 'bottom' })
 const typed = new Typed('.multiple-text', {
     strings: [
         'Data Analyst',
-        'Business Analyst',
-        'Product Analyst'
+        'Business Analyst (7 Months Experience)'
     ],
     typeSpeed: 160,
     backSpeed: 160,
